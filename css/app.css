@@ -14,18 +14,28 @@ body{
 
 h1,h2,h3{
     font-family: 'Playfair Display', serif;
-    margin: 0 0 5rem 0;
+    margin: 0 0 3rem 0;
 }
 h1{
-font-size: 5rem;
+font-size: 4rem;
 }
 h2{
- font-size: 4rem;
+ font-size: 3rem;
 }
 h3{
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
-
+@media(min-width: 768px) {
+    h1{
+        font-size: 5rem;
+    }
+    h2{
+        font-size: 4rem;
+       }
+    h3{
+           font-size: 3rem;
+       }
+}
 a{
     text-decoration: none;
     color: #000;
@@ -34,21 +44,13 @@ img{
     max-width: 100%;
     display: block;
 }
-ul li{
-    list-style-type: none;
-    
-}
-ul li a{
-    color: #fff;
-    font-size: 2rem;
-}
-ul li a:hover{
-    color: #7f8c8d;
-    transition-duration: .3s;
-}
+
 .contenedor{
     max-width: 1200px;
     margin: 0 auto;
+}
+.text-center{
+    text-align: center;
 }
 
 .header{
@@ -110,7 +112,7 @@ ul li a:hover{
     width: 100%;
     height: 72vh;
     background: #fff;
-    top:18rem;
+    top:26rem;
     left:-100%;
     transition: all .5s;
 }
@@ -119,9 +121,8 @@ ul li a:hover{
 }
 @media (min-width: 768px)  {
     .nav{
-        /* margin-left: 20rem; */
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
         position: unset;
         height: 0;
         
@@ -133,7 +134,7 @@ text-transform: uppercase;
 font-weight: bold;
 text-decoration: none;
 color: #34495e;
-font-size: 20px;
+font-size: 1.5rem;
 margin-right: 2rem;
 }
 .enlace:nth-child(1){
@@ -146,6 +147,9 @@ margin-right: 2rem;
 }
 
 @media (min-width: 768px)  {
+    .enlace{
+        font-size: 1.5rem;
+    }
     .enlace:hover{
         padding-left: unset;
         
@@ -208,7 +212,7 @@ margin-right: 2rem;
     padding: 5rem 0;
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 100%, 100rem;
+    background-size: 100%, 65rem;
     margin: 5rem 0;
 }
 @media (min-width: 768px)  {
@@ -218,7 +222,7 @@ margin-right: 2rem;
         padding: 10rem 0;
         background-position: left center;
         background-repeat: no-repeat;
-        background-size: 100%, 100rem;
+        background-size: 100%, 65rem;
         margin: 5rem 0;
     }
 }
@@ -268,9 +272,8 @@ margin-right: 2rem;
         padding: unset;
     }
 }
-.contenido-principal h2{
-    text-align: center;
-    
+.titulo-principal{
+    font-size: 3rem;
 }
 
 .services{
@@ -290,6 +293,19 @@ footer{
     background-color: #273343;
     padding: 2rem 0;
     
+}
+
+footer ul li{
+    list-style-type: none;
+    
+}
+footer ul li a{
+    color: #fff;
+    font-size: 2rem;
+}
+footer ul li a:hover{
+    color: #7f8c8d;
+    transition-duration: .3s;
 }
 
 .footer-flex{
@@ -336,3 +352,137 @@ footer{
     }
 }
 
+/** Contenido Nosotros**/
+
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.imagen-abogado img{
+    width: 100%;
+}
+
+.informacion-nosotros p{
+    padding: 2rem;
+}
+
+.texto-quienes-somos p{
+    padding: 2rem;
+}
+
+@media(min-width: 768px) {
+    .informacion-nosotros p{
+        padding: 0rem;
+    }
+
+    .texto-quienes-somos p{
+        padding: 0rem;
+    }
+}
+
+/**Blog**/
+
+.contenido-blog{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2rem;
+    margin-bottom: -80rem;
+}
+.titulo-blog{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.informacion-meta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.informacion-meta p{
+    font-weight: 700;
+}
+
+.informacion-meta p span{
+    color:#2980b9
+}
+
+@media(min-width: 768px) {
+    .contenido-blog{
+        display: grid;
+        grid-template-rows: unset;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 2rem;
+        margin-bottom: 0;
+    }
+
+    .titulo-blog{
+        font-size: 5rem;
+        text-align: left;
+    }
+    .informacion-meta{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+}
+
+/**abogados disponibles**/
+
+.abogados-disponibles{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.foto-abogado img{
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+}
+.titulo-abogados-disponibles{
+  font-size: 3rem;
+}
+.datos p{
+    font-weight: 700;
+}
+
+.datos span {
+    color:#2980b9
+}
+
+.enlace-abogado{
+    display: block;
+    background-color: #2980b9;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border-bottom-left-radius: 1rem;
+    font-weight: 400;
+}
+.enlace-abogado:hover{
+    background-color: #273343;
+    transition: all .3s;
+}
+
+@media(min-width: 768px) {
+
+    .titulo-abogados-disponibles{
+        font-size: 5rem;
+      }
+
+    .abogados-disponibles{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 2rem;
+    }
+
+
+}
