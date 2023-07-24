@@ -109,7 +109,7 @@ img {
     visibility: hidden;
   }
 }
-.nav {
+/* .nav {
   display: grid;
   justify-items: center;
   position: fixed;
@@ -119,6 +119,23 @@ img {
   top: 26rem;
   left: -100%;
   transition: all 0.5s;
+} */
+.nav {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  top: 0;
+  left: -100%;
+  transition: all 0.5s;
+  .icon-menu {
+    position: absolute;
+    right: 0;
+    top: 2rem;
+  }
 }
 .nav.active {
   left: 0;
@@ -130,6 +147,10 @@ img {
     position: unset;
     height: 0;
   }
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
 }
 .enlace {
   text-transform: uppercase;
