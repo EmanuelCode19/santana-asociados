@@ -1,21 +1,48 @@
-import { header } from './components/header.js';
+const iconMenu = document.querySelector(".icon-menu");
+const navMenu = document.querySelector(".nav");
+
+window.addEventListener('load',()=>{
+    
+    if (!localStorage.getItem('notificacionMostrada')) {
+        // Si no se ha mostrado, mostrar la notificación
+        showNotification()
+
+        // Marcar la notificación como mostrada en localStorage
+        localStorage.setItem('notificacionMostrada', 'true');
+    }else{
+        setTimeout(() => {
+            localStorage.removeItem('notificacionMostrada')
+        },1800000)
+    }
 
 
-const headerContainer = document.querySelector('#header');
+    function showNotification(){
+    Notification
+    .requestPermission()
+    .then( result => {
+    
+        if( Notification.permission === result){
 
-headerContainer.innerHTML = header;
+            const redSocial = new Notification('Santana & Asociados',{
+                icon:'images/logoSyA.jpeg',
+                body:'Visita nuestra red social'
+             })
 
-const iconMenu = document.querySelector('.icon-menu');
+            redSocial.onclick = function() {
+                window.open('https://www.instagram.com/servicios_juridicos_santana/?igsh=ZGNjOWZkYTE3MQ%3D%3D')
+            }
+            
+        }
+    })
+    }
+})
 
-const navMenu = document.querySelector('.nav');
 
-window.onload = () => {
-  iconMenu.addEventListener('click', () => {
+iconMenu.addEventListener('click', ()=>{
     event.stopPropagation();
-    navMenu.classList.toggle('active');
-  });
+    navMenu.classList.toggle('active')
+   })
 
-  window.onclick = function (e) {
-    navMenu.classList.remove('active');
-  };
-};
+window.onclick = function (e) {
+    navMenu.classList.remove('active')
+   }
